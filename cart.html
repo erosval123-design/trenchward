@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cart | Trenchward</title>
+<meta name="description" content="Your shopping cart">
+<link rel="canonical" href="https://agrivex.shop/cart.html">
+<meta property="og:title" content="Cart | Trenchward">
+<meta property="og:description" content="Your shopping cart">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agrivex.shop/cart.html">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700&display=swap">
+<style>
+:root{
+  --bg:#0B1120;--s1:#111827;--s2:#1C2538;--hn:#060D1A;
+  --a:#F59E0B;--a2:#FBBF24;
+  --txt:#F1F5F9;--mt:#94A3B8;--fa:#475569;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.13);--ok:#22C55E;
+  --ff-head:'Barlow Condensed',system-ui,sans-serif;
+  --ff-body:'Inter',system-ui,sans-serif;
+  --r:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff-body);background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--a);text-decoration:none;transition:opacity .15s}
+a:hover{opacity:.8}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4,h5{font-family:var(--ff-head);line-height:1.1;letter-spacing:-.2px}
+p{line-height:1.72}
+button{cursor:pointer;border:none;font-family:var(--ff-body)}
+/* aspect ratio boxes */
+.ar{position:relative;overflow:hidden;background:var(--s1)}
+.ar::before{content:'';display:block;padding-top:75%}
+.ar.sq::before{padding-top:100%}
+.ar.wide::before{padding-top:62.5%}
+.ar.hero::before{padding-top:56%}
+.ar>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .4s ease}
+.ar:hover>img{transform:scale(1.03)}
+/* layout */
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 20px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+/* header */
+.hdr{background:var(--hn);position:sticky;top:0;z-index:400;border-bottom:1px solid var(--bd)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 20px;max-width:1200px;margin:0 auto}
+.hdr-nav{display:flex;align-items:center;gap:28px}
+.hdr-nav a{color:var(--mt);font-size:.9rem;font-weight:500;transition:color .15s}
+.hdr-nav a:hover{color:var(--txt);opacity:1}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.cart-btn{background:var(--a);color:#000;font-weight:700;font-size:.85rem;padding:8px 18px;border-radius:var(--r);display:flex;align-items:center;gap:8px;transition:background .15s}
+.cart-btn:hover{background:var(--a2);opacity:1}
+.cart-count{background:#000;color:var(--a);font-size:.7rem;font-weight:900;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;display:none}
+.cart-count.show{display:flex}
+/* mobile nav */
+.mob-menu{display:none;background:none;padding:8px;border-radius:4px}
+@media(max-width:768px){
+  .hdr-nav{display:none}
+  .mob-menu{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .mob-menu span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px}
+  .mob-nav{display:none;position:fixed;inset:64px 0 0 0;background:var(--hn);z-index:399;padding:24px 20px;flex-direction:column;gap:20px;border-top:1px solid var(--bd)}
+  .mob-nav.open{display:flex}
+  .mob-nav a{color:var(--txt);font-size:1.1rem;font-weight:600;padding:12px 0;border-bottom:1px solid var(--bd)}
+}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;padding:12px 24px;border-radius:var(--r);transition:all .15s;font-size:.95rem}
+.btn-primary{background:var(--a);color:#000}
+.btn-primary:hover{background:var(--a2);opacity:1}
+.btn-outline{background:transparent;color:var(--txt);border:1px solid var(--bd2)}
+.btn-outline:hover{border-color:var(--a);color:var(--a);opacity:1}
+.btn-lg{padding:15px 32px;font-size:1.05rem}
+.btn-sm{padding:8px 16px;font-size:.82rem}
+/* trust bar */
+.trust{background:var(--s1);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:12px 20px}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--mt);font-weight:500}
+.trust-item svg{color:var(--ok);flex-shrink:0}
+/* product card */
+.pcard{background:var(--s1);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;transition:border-color .2s,transform .2s}
+.pcard:hover{border-color:var(--a);transform:translateY(-2px)}
+.pcard-img{}
+.pcard-body{padding:16px}
+.pcard-cat{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--a);margin-bottom:4px}
+.pcard-name{font-family:var(--ff-head);font-size:1.2rem;font-weight:800;color:var(--txt);line-height:1.1;margin-bottom:6px}
+.pcard-sub{font-size:.82rem;color:var(--mt);margin-bottom:12px;line-height:1.4}
+.pcard-price{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.pcard-now{font-family:var(--ff-head);font-size:1.6rem;font-weight:800;color:var(--txt)}
+.pcard-was{font-size:.82rem;color:var(--fa);text-decoration:line-through}
+.pcard-save{font-size:.75rem;font-weight:700;background:var(--ok);color:#000;padding:2px 7px;border-radius:3px}
+.pcard-cta{display:block;background:var(--a);color:#000;font-weight:700;font-size:.88rem;text-align:center;padding:10px;border-radius:6px;transition:background .15s}
+.pcard-cta:hover{background:var(--a2);opacity:1}
+/* footer */
+.ftr{background:var(--hn);border-top:1px solid var(--bd);padding:48px 20px 24px}
+.ftr-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ftr-brand p{color:var(--mt);font-size:.88rem;line-height:1.7;margin-top:10px;max-width:260px}
+.ftr-col h4{font-family:var(--ff-head);font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txt);margin-bottom:14px}
+.ftr-col a{display:block;color:var(--mt);font-size:.87rem;margin-bottom:8px;transition:color .15s}
+.ftr-col a:hover{color:var(--txt);opacity:1}
+.ftr-bottom{max-width:1200px;margin:0 auto;border-top:1px solid var(--bd);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ftr-bottom p{font-size:.78rem;color:var(--fa)}
+@media(max-width:768px){.ftr-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.ftr-grid{grid-template-columns:1fr}}
+/* section spacing */
+.sec{padding:72px 0}
+.sec-sm{padding:48px 0}
+.sec-title{font-family:var(--ff-head);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px}
+.sec-sub{color:var(--mt);font-size:1rem;max-width:560px}
+/* badge */
+.badge{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:3px 10px;border-radius:3px}
+.badge-amber{background:rgba(217,119,6,.15);color:var(--a);border:1px solid rgba(217,119,6,.3)}
+.badge-ok{background:rgba(34,197,94,.12);color:var(--ok);border:1px solid rgba(34,197,94,.3)}
+/* spec table */
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table tr:nth-child(even){background:var(--s2)}
+.spec-table td{padding:9px 14px;font-size:.88rem;border-bottom:1px solid var(--bd)}
+.spec-table td:first-child{color:var(--mt);font-weight:600;width:42%}
+.spec-table td:last-child{color:var(--txt)}
+/* form */
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--mt);margin-bottom:6px}
+.form-control{width:100%;background:var(--s2);border:1px solid var(--bd);color:var(--txt);padding:11px 14px;border-radius:6px;font-size:.92rem;font-family:var(--ff-body);transition:border-color .15s}
+.form-control:focus{outline:none;border-color:var(--a)}
+textarea.form-control{resize:vertical;min-height:120px}
+/* cart drawer */
+.cart-drawer{position:fixed;top:0;right:-420px;width:420px;height:100vh;background:var(--s1);border-left:1px solid var(--bd);z-index:1000;transition:right .3s ease;display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,.4)}
+.cart-drawer.open{right:0}
+.cart-hdr{padding:20px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
+.cart-hdr h3{font-family:var(--ff-head);font-size:1.2rem}
+.cart-close{background:var(--s2);border:none;color:var(--mt);width:32px;height:32px;border-radius:50%;font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.cart-items{flex:1;overflow-y:auto;padding:16px}
+.cart-empty{text-align:center;color:var(--mt);padding:48px 0;font-size:.9rem}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--bd)}
+.cart-item-img{width:64px;height:64px;background:var(--s2);border-radius:6px;flex-shrink:0;overflow:hidden}
+.cart-item-img img{width:100%;height:100%;object-fit:contain}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:.88rem;font-weight:600;line-height:1.3;margin-bottom:4px}
+.cart-item-price{font-size:.85rem;color:var(--a);font-weight:700}
+.cart-item-remove{font-size:.75rem;color:var(--fa);cursor:pointer;background:none;border:none;color:var(--fa);transition:color .15s;padding:0}
+.cart-item-remove:hover{color:var(--txt)}
+.cart-ftr{padding:20px;border-top:1px solid var(--bd)}
+.cart-total{display:flex;justify-content:space-between;font-weight:700;margin-bottom:16px;font-size:1rem}
+.cart-total span:last-child{font-family:var(--ff-head);font-size:1.3rem}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;display:none}
+.overlay.open{display:block}
+@media(max-width:480px){.cart-drawer{width:100%;right:-100%}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-inner">
+    <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 44" fill="none" style="height:38px;width:auto;display:block">
+  <!-- bucket icon -->
+  <path d="M6 8 L20 8 L24 28 L2 28 Z" fill="#F59E0B"/>
+  <path d="M8 28 L18 28 L20 36 L6 36 Z" fill="#F59E0B" opacity=".7"/>
+  <rect x="10" y="4" width="6" height="5" rx="1" fill="#F59E0B"/>
+  <rect x="2" y="7" width="22" height="2.5" rx="1" fill="#F59E0B" opacity=".5"/>
+  <!-- wordmark -->
+  <text x="32" y="30" font-family="'Barlow Condensed',system-ui,sans-serif" font-weight="800" font-size="26" letter-spacing="1" fill="#F1F5F9">TRENCH</text>
+  <text x="148" y="30" font-family="'Barlow Condensed',system-ui,sans-serif" font-weight="800" font-size="26" letter-spacing="1" fill="#F59E0B">WARD</text>
+</svg></a>
+    <nav class="hdr-nav"><a href="index.html" >Home</a><a href="shop.html" >Shop</a><a href="about.html" >About</a><a href="help.html" >Help</a><a href="contact.html" >Contact</a></nav>
+    <div class="hdr-right">
+      <button class="cart-btn" onclick="openCart()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Cart <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="mob-menu" onclick="toggleMob()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mob-nav" id="mob-nav">
+  <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="help.html">Help</a><a href="contact.html">Contact</a>
+  <a href="cart.html" class="btn btn-primary" style="margin-top:8px">View Cart</a>
+</div>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<div class="trust">
+  <div class="trust-inner">
+    <span class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Free Freight</span>
+    <span class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 1-Year Warranty</span>
+    <span class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ships in 5–10 business days</span>
+    <span class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> US-Based Support</span>
+  </div>
+</div>
+<section style="padding:48px 0">
+  <div class="wrap">
+    <h1 class="sec-title" style="margin-bottom:32px">Your Cart</h1>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:start">
+      <div id="page-cart-items"></div>
+      <div style="background:var(--s1);border:1px solid var(--bd);border-radius:var(--r);padding:24px;position:sticky;top:80px">
+        <h3 style="font-family:var(--ff-head);font-size:1.2rem;margin-bottom:20px">Order Summary</h3>
+        <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--mt);margin-bottom:8px"><span>Subtotal</span><span id="page-subtotal">$0</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--mt);margin-bottom:8px"><span>Freight</span><span style="color:var(--ok)">FREE</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--mt);margin-bottom:16px"><span>Tax</span><span>At checkout</span></div>
+        <div style="border-top:1px solid var(--bd);padding-top:16px;display:flex;justify-content:space-between;font-weight:700;margin-bottom:20px">
+          <span>Total</span><span id="page-total" style="font-family:var(--ff-head);font-size:1.4rem">$0</span>
+        </div>
+        <a href="checkout.html" class="btn btn-primary" style="width:100%;display:flex;justify-content:center;font-size:1rem">Proceed to Checkout</a>
+        <p style="font-size:.75rem;color:var(--fa);text-align:center;margin-top:12px">All prices USD. Taxes calculated at checkout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function renderPageCart(){
+  const c=getCart();
+  const el=document.getElementById('page-cart-items');
+  const sub=document.getElementById('page-subtotal');
+  const tot=document.getElementById('page-total');
+  if(!el)return;
+  if(c.length===0){el.innerHTML='<div style="padding:48px 0;text-align:center;color:var(--mt)">Your cart is empty. <a href="shop.html">Shop now →</a></div>';return}
+  const total=c.reduce((s,x)=>s+(x.price*(x.qty||1)),0);
+  if(sub)sub.textContent='$'+total.toLocaleString();
+  if(tot)tot.textContent='$'+total.toLocaleString();
+  el.innerHTML=c.map(x=>`
+    <div style="display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--bd)">
+      <div style="width:100px;height:100px;background:var(--s1);border-radius:6px;overflow:hidden;border:1px solid var(--bd)">
+        <img src="${x.img||''}" alt="${x.name}" style="width:100%;height:100%;object-fit:contain" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:4px">${x.name}</div>
+        <div style="font-size:.88rem;color:var(--mt)">Qty: ${x.qty||1}</div>
+        <button onclick="removeFromCart('${x.slug}');renderPageCart()" style="font-size:.8rem;color:var(--fa);background:none;border:none;cursor:pointer;padding:0;margin-top:8px">Remove</button>
+      </div>
+      <div style="font-family:var(--ff-head);font-size:1.4rem;font-weight:800">\$${(x.price*(x.qty||1)).toLocaleString()}</div>
+    </div>`).join('');
+}
+document.addEventListener('DOMContentLoaded',renderPageCart);
+</script>
+
+<footer class="ftr">
+  <div class="ftr-grid">
+    <div class="ftr-brand">
+      <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 44" fill="none" style="height:38px;width:auto;display:block">
+  <!-- bucket icon -->
+  <path d="M6 8 L20 8 L24 28 L2 28 Z" fill="#F59E0B"/>
+  <path d="M8 28 L18 28 L20 36 L6 36 Z" fill="#F59E0B" opacity=".7"/>
+  <rect x="10" y="4" width="6" height="5" rx="1" fill="#F59E0B"/>
+  <rect x="2" y="7" width="22" height="2.5" rx="1" fill="#F59E0B" opacity=".5"/>
+  <!-- wordmark -->
+  <text x="32" y="30" font-family="'Barlow Condensed',system-ui,sans-serif" font-weight="800" font-size="26" letter-spacing="1" fill="#F1F5F9">TRENCH</text>
+  <text x="148" y="30" font-family="'Barlow Condensed',system-ui,sans-serif" font-weight="800" font-size="26" letter-spacing="1" fill="#F59E0B">WARD</text>
+</svg></a>
+      <p>Compact machinery. Direct pricing. Real support.<br>Sold and shipped by <strong>[PLACEHOLDER: Legal seller name]</strong>. Trenchward is not the manufacturer of the products it sells.</p>
+    </div>
+    <div class="ftr-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a>
+      <a href="products/terror-xix-storm.html">Terror XIX Storm</a><a href="products/stomp-skid-steer.html">STOMP Tracked Skid Steer</a><a href="products/r32-pro.html">R32 PRO Mini Excavator</a><a href="products/naga-4-0.html">NAGA 4.0 Mini Excavator</a>
+    </div>
+    <div class="ftr-col">
+      <h4>Support</h4>
+      <a href="help.html">Help &amp; FAQ</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="track-order.html">Track Order</a>
+      <a href="shipping-policy.html">Shipping</a>
+      <a href="returns-refunds.html">Returns</a>
+      <a href="warranty.html">Warranty</a>
+    </div>
+    <div class="ftr-col">
+      <h4>Legal</h4>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <p style="font-size:.78rem;color:var(--fa);margin-top:14px">All prices USD. Taxes calculated at checkout.</p>
+    </div>
+  </div>
+  <div class="ftr-bottom">
+    <p>© 2026 Trenchward — operated by [PLACEHOLDER: Legal seller name]. agrivex.shop</p>
+    <p>Products sold by Trenchward are sourced from third-party manufacturers. Trenchward is an authorized reseller, not the manufacturer.</p>
+  </div>
+</footer>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-hdr">
+    <h3>Your Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <p class="cart-empty" id="cart-empty">Your cart is empty.</p>
+  </div>
+  <div class="cart-ftr" id="cart-ftr" style="display:none">
+    <div class="cart-total"><span>Total</span><span id="cart-total">$0</span></div>
+    <a href="checkout.html" class="btn btn-primary" style="width:100%;display:flex;justify-content:center">Proceed to Checkout</a>
+  </div>
+</div>
+
+<script>
+// Cart
+const CART_KEY='tw_cart';
+function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]')}catch{return[]}}
+function saveCart(c){localStorage.setItem(CART_KEY,JSON.stringify(c))}
+function addToCart(slug,name,price,img){
+  let c=getCart();
+  const idx=c.findIndex(x=>x.slug===slug);
+  if(idx>=0)c[idx].qty=(c[idx].qty||1)+1;
+  else c.push({slug,name,price,img,qty:1});
+  saveCart(c);renderCart();openCart();
+}
+function removeFromCart(slug){
+  let c=getCart().filter(x=>x.slug!==slug);
+  saveCart(c);renderCart();
+}
+function renderCart(){
+  const c=getCart();
+  const el=document.getElementById('cart-items');
+  const empty=document.getElementById('cart-empty');
+  const ftr=document.getElementById('cart-ftr');
+  const cnt=document.getElementById('cart-count');
+  const tot=document.getElementById('cart-total');
+  const totalQty=c.reduce((s,x)=>s+(x.qty||1),0);
+  if(cnt){cnt.textContent=totalQty;cnt.classList.toggle('show',totalQty>0)}
+  if(!el)return;
+  if(c.length===0){if(empty)empty.style.display='block';if(ftr)ftr.style.display='none';el.innerHTML='<p class="cart-empty">Your cart is empty.</p>';return}
+  if(empty)empty.style.display='none';
+  if(ftr)ftr.style.display='block';
+  const total=c.reduce((s,x)=>s+(x.price*(x.qty||1)),0);
+  if(tot)tot.textContent='$'+total.toLocaleString();
+  el.innerHTML=c.map(x=>`
+    <div class="cart-item">
+      <div class="cart-item-img"><img src="${x.img||''}" alt="${x.name}" onerror="this.style.display='none'"></div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${x.name}</div>
+        <div class="cart-item-price">$${(x.price*(x.qty||1)).toLocaleString()}</div>
+        <button class="cart-item-remove" onclick="removeFromCart('${x.slug}')">Remove</button>
+      </div>
+    </div>`).join('');
+}
+function openCart(){document.getElementById('cart-drawer').classList.add('open');document.getElementById('overlay').classList.add('open')}
+function closeCart(){document.getElementById('cart-drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
+function toggleMob(){document.getElementById('mob-nav').classList.toggle('open')}
+document.addEventListener('DOMContentLoaded',renderCart);
+</script></body></html>
