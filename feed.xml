@@ -7,7 +7,7 @@
   
   <item>
     <g:id>TW-TERROR-XIX</g:id>
-    <g:title>TYPHON TERROR XIX STORM — 1.8-Ton Kubota Diesel Mini Excavator</g:title>
+    <g:title>TYPHON TERROR XIX STORM -- 1.8-Ton Kubota Diesel Mini Excavator</g:title>
     <g:description>The Terror XIX Storm is a 1.8-ton mini excavator powered by a Kubota D902 diesel. A swing boom lets you work flush against structures; the rubber track undercarriage won't destroy driveways. Trailerable behind a standard pickup. Free freight, factory-crated.</g:description>
     <g:link>https://agrivex.shop/products/terror-xix-storm.html</g:link>
     <g:image_link>https://agrivex.shop/assets/ex1-D72MxS0p.jpg</g:image_link>
@@ -27,7 +27,7 @@
   </item>
   <item>
     <g:id>TW-STOMP-SSL</g:id>
-    <g:title>TYPHON STOMP — 22.1 HP Honda Tracked Skid Steer Loader</g:title>
+    <g:title>TYPHON STOMP -- 22.1 HP Honda Tracked Skid Steer Loader</g:title>
     <g:description>The STOMP is a 1,830 lb tracked skid steer loader with a 22.1 HP Honda V-twin. Three hydraulic valves make it attachment-ready out of the box. Compact enough for tight spaces, with the power to move serious material.</g:description>
     <g:link>https://agrivex.shop/products/stomp-skid-steer.html</g:link>
     <g:image_link>https://agrivex.shop/assets/sk1-C7M1Kyuw.jpg</g:image_link>
@@ -47,7 +47,7 @@
   </item>
   <item>
     <g:id>TW-R32PRO</g:id>
-    <g:title>RIPPA R32 PRO — 3.2-Ton Kubota V1505 Mini Excavator</g:title>
+    <g:title>RIPPA R32 PRO -- 3.2-Ton Kubota V1505 Mini Excavator</g:title>
     <g:description>The R32 PRO is a 3.2-ton mini excavator with a Kubota V1505 four-cylinder diesel — 25 HP with 2,827 mm digging depth. Enclosed cab, steel undercarriage, full attachment compatibility. Ships freight-crated.</g:description>
     <g:link>https://agrivex.shop/products/r32-pro.html</g:link>
     <g:image_link>https://agrivex.shop/assets/r32-1-Cq_iIaiy.jpg</g:image_link>
@@ -67,8 +67,8 @@
   </item>
   <item>
     <g:id>TW-NAGA40</g:id>
-    <g:title>TYPHON NAGA 4.0 — 4-Ton Yanmar Diesel, Zero Tail Swing</g:title>
-    <g:description>The NAGA 4.0 is a 4-ton class zero-tail-swing mini excavator powered by a Yanmar Tier 4 Final diesel. AC cabin, 7-inch touchscreen, LED work lights, and full attachment hydraulics. The most capable machine in the Trenchward lineup.</g:description>
+    <g:title>TYPHON NAGA 4.0 -- 4-Ton Yanmar Diesel, Zero Tail Swing</g:title>
+    <g:description>The NAGA 4.0 is a 4-ton class zero-tail-swing mini excavator powered by a Yanmar Tier 4 Final diesel. AC cabin, 7-inch touchscreen, LED work lights, and full attachment hydraulics. The most capable machine in the lineup.</g:description>
     <g:link>https://agrivex.shop/products/naga-4-0.html</g:link>
     <g:image_link>https://agrivex.shop/assets/naga1-CUShuiNY.jpg</g:image_link>
     <g:price>3900.00 USD</g:price>
@@ -77,6 +77,66 @@
     <g:condition>new</g:condition>
     <g:brand>Trenchward</g:brand>
     <g:product_type>Mini Excavator</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+  <item>
+    <g:id>TC-SG24</g:id>
+    <g:title>SG24 Stump Grinder -- 24-Inch 3-Point PTO Stump Grinder for 15–45 HP Tractors</g:title>
+    <g:description>The SG24 mounts to any 15–45 HP tractor with a standard Cat. 1 three-point hitch. 34 carbide teeth on a 24-inch flywheel grind stumps 6 inches below grade. PTO shaft included, free freight.</g:description>
+    <g:link>https://agrivex.shop/products/sg24-stump-grinder.html</g:link>
+    <g:image_link>https://terrabolt.shop/assets/sg1.webp</g:image_link>
+    <g:price>699.00 USD</g:price>
+    <g:sale_price>699.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Stump Grinder</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+  <item>
+    <g:id>TC-B200</g:id>
+    <g:title>B200 Wood Chipper -- 35 HP Towable Drum Wood Chipper — 8-Inch Capacity</g:title>
+    <g:description>The B200 is a 35 HP towable drum chipper handling branches up to 8 inches in diameter. Hydraulic self-feeding rollers bring material in automatically. Reversible alloy-steel knives extend blade life. Free freight.</g:description>
+    <g:link>https://agrivex.shop/products/b200-wood-chipper.html</g:link>
+    <g:image_link>https://terrabolt.shop/assets/b200-1.webp</g:image_link>
+    <g:price>1199.00 USD</g:price>
+    <g:sale_price>1199.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Wood Chipper</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+  <item>
+    <g:id>TC-SGR1500</g:id>
+    <g:title>SGR1500 Stump Grinder -- 15 HP Gasoline Self-Propelled Stump Grinder</g:title>
+    <g:description>The SGR1500 is a standalone 15 HP gas stump grinder — no tractor needed. A DUCAR 420cc EPA/CARB-certified engine drives a 12-inch cutting wheel 10 inches below grade. Self-propelled, towable, 265 lb net weight.</g:description>
+    <g:link>https://agrivex.shop/products/sgr1500-stump-grinder.html</g:link>
+    <g:image_link>https://terrabolt.shop/assets/sgr1-BmRGDWdj.jpg</g:image_link>
+    <g:price>1100.00 USD</g:price>
+    <g:sale_price>1100.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Stump Grinder</g:product_type>
     <g:shipping>
       <g:country>US</g:country>
       <g:service>Freight</g:service>
