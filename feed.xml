@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+  <title>Trenchward Product Feed</title>
+  <link>https://agrivex.shop</link>
+  <description>Compact machinery. Direct pricing. Real support.</description>
+  
+  <item>
+    <g:id>TW-TERROR-XIX</g:id>
+    <g:title>TYPHON TERROR XIX STORM — 1.8-Ton Kubota Diesel Mini Excavator</g:title>
+    <g:description>The Terror XIX Storm is a 1.8-ton mini excavator powered by a Kubota D902 diesel. A swing boom lets you work flush against structures; the rubber track undercarriage won't destroy driveways. Trailerable behind a standard pickup. Free freight, factory-crated.</g:description>
+    <g:link>https://agrivex.shop/products/terror-xix-storm.html</g:link>
+    <g:image_link>https://agrivex.shop/assets/ex1-D72MxS0p.jpg</g:image_link>
+    <g:price>2599.00 USD</g:price>
+    <g:sale_price>2599.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Mini Excavator</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+  <item>
+    <g:id>TW-STOMP-SSL</g:id>
+    <g:title>TYPHON STOMP — 22.1 HP Honda Tracked Skid Steer Loader</g:title>
+    <g:description>The STOMP is a 1,830 lb tracked skid steer loader with a 22.1 HP Honda V-twin. Three hydraulic valves make it attachment-ready out of the box. Compact enough for tight spaces, with the power to move serious material.</g:description>
+    <g:link>https://agrivex.shop/products/stomp-skid-steer.html</g:link>
+    <g:image_link>https://agrivex.shop/assets/sk1-C7M1Kyuw.jpg</g:image_link>
+    <g:price>1475.00 USD</g:price>
+    <g:sale_price>1475.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Mini Skid Steer</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+  <item>
+    <g:id>TW-R32PRO</g:id>
+    <g:title>RIPPA R32 PRO — 3.2-Ton Kubota V1505 Mini Excavator</g:title>
+    <g:description>The R32 PRO is a 3.2-ton mini excavator with a Kubota V1505 four-cylinder diesel — 25 HP with 2,827 mm digging depth. Enclosed cab, steel undercarriage, full attachment compatibility. Ships freight-crated.</g:description>
+    <g:link>https://agrivex.shop/products/r32-pro.html</g:link>
+    <g:image_link>https://agrivex.shop/assets/r32-1-Cq_iIaiy.jpg</g:image_link>
+    <g:price>3900.00 USD</g:price>
+    <g:sale_price>3900.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Mini Excavator</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+  <item>
+    <g:id>TW-NAGA40</g:id>
+    <g:title>TYPHON NAGA 4.0 — 4-Ton Yanmar Diesel, Zero Tail Swing</g:title>
+    <g:description>The NAGA 4.0 is a 4-ton class zero-tail-swing mini excavator powered by a Yanmar Tier 4 Final diesel. AC cabin, 7-inch touchscreen, LED work lights, and full attachment hydraulics. The most capable machine in the Trenchward lineup.</g:description>
+    <g:link>https://agrivex.shop/products/naga-4-0.html</g:link>
+    <g:image_link>https://agrivex.shop/assets/naga1-CUShuiNY.jpg</g:image_link>
+    <g:price>3900.00 USD</g:price>
+    <g:sale_price>3900.00 USD</g:sale_price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Trenchward</g:brand>
+    <g:product_type>Mini Excavator</g:product_type>
+    <g:shipping>
+      <g:country>US</g:country>
+      <g:service>Freight</g:service>
+      <g:price>0 USD</g:price>
+    </g:shipping>
+    <g:return_policy_label>merchant-return-policy</g:return_policy_label>
+    <g:identifier_exists>false</g:identifier_exists>
+  </item>
+</channel>
+</rss>
